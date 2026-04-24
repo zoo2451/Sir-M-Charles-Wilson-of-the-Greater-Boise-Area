@@ -1,0 +1,292 @@
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    background-repeat: no-repeat;
+    animation: imagefadein 1.7s ease forwards;
+    min-height: 100vh;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #f0f0f0;
+    text-shadow: 
+        0 1px 3px rgba(255,255,255,0.4), 
+        0 1px 6px rgba(0,0,0,0.6),
+        0 1px 3px rgba(0,0,0,0.8);
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    border-bottom: #363636 2px solid;
+    font-size: 35px;
+    margin: 3%;
+
+}
+.navbar a {
+    flex: 1 1 0;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: navbarFadeIn 0.7s ease forwards;
+    animation-delay: 0.2s;
+        color: inherit;
+     text-decoration: none;
+}
+/* Animate each link with a slight delay for a staggered effect */
+.navbar a:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.navbar a:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.navbar a:nth-child(4) {
+    animation-delay: 0.8s;
+}
+.navbar a:nth-child(5) {
+    animation-delay: 1.0s;
+}
+/* Add more nth-child rules if you have more links */
+
+@keyframes navbarFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar a:hover {
+    background: #36363618;
+    color: #fff;
+    border-radius: 15px;
+    transform: scale(1.08);
+}
+.download-button {
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: navbarFadeIn 0.7s ease forwards;
+    animation-delay: 0.2s;
+}
+.download-button:hover {
+    background: #36363618;
+    color: #fff;
+    border-radius: 15px;
+    transform: scale(1.08);
+}
+.main-content {
+    margin-right: 50px;
+    margin-left: 50px;
+    background: #ebe4dc;
+
+}
+@keyframes imagefadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/*/ Imported from stylephotogallery.css /*/
+/*///////////*/
+/*Tab styles */
+/*///////////*/
+.tab-photos {
+    background: #ece9d8;
+    border: 3px solid #ebe4dc;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.title-bar {
+    height: 20px;
+    border-top: 2px solid #ebe4dc !important;
+    border: 3px solid #ebe4dc;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    border-radius: 5px 5px 0 0;
+    user-select: none;
+}
+
+.window-icon {
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+            justify-content: center;
+            font-size: 10px;
+}
+.window-icon img {
+    width: 16px;
+    height: 16px;
+    image-rendering: pixelated;
+}
+.window-title {
+            color: #363636;
+            font-size: 11px;
+            font-weight: normal;
+            flex-grow: 1;
+}
+.close-btn {
+    border: 1px solid #d9e6f6 !important;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #868686;
+    text-shadow: none;
+}
+.close-btn:hover {
+    background: #d9e6f6;
+    cursor:pointer;
+}
+.close-btn::after {
+    content: 'x';
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/*//////////////////////*/
+/*Actual Window Content */
+/*//////////////////////*/
+.window-content {
+    overflow-y: auto;
+    overflow-x: hidden; /* Keep this to remove horizontal scrollbar */
+    height: calc(100vh - 200px); /* Adjust as needed */
+    background: white;
+    border: 2px solid #ece9d8 !important;
+    font-size: 24px; /* This font-size might be too large for general window content, adjust if needed */
+
+    /* Ensure it takes full available width if it's the main content area */
+    width: 100%; /* Important for .photo-gallery to expand */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+.window-content a {
+  height: 30px;
+  width: auto;
+  display: flex;
+    flex-direction: column; /* Icon image on top, text below */
+    align-items: center; /* Center image and text horizontally */
+    justify-content: flex-start; /* Align content to the top of the icon box */
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+  image-rendering: pixelated;
+}
+
+.window-content a span {
+  display: inline-block;
+  padding: 2px 6px;
+}
+
+
+.window-content a:hover span {
+ background: #36363618;
+    color: #fff;
+    border-radius: 15px;
+    transform: scale(1.08);
+}
+.photo-gallery {
+    display: grid;
+    /* This makes the grid responsive and fills available width */
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    /* grid-auto-columns: minmax(120px, auto); /* Remove, not needed when grid-template-columns defines auto-fill */
+    justify-items: center; /* Centers each gallery-item within its grid cell */
+    align-items: start; /* Aligns gallery-item content to the top of its grid cell */
+    gap: 15px; /* Add some spacing between items */
+    width: auto; /* Ensure the gallery takes full width of its parent */
+    /* font-size: 24px; /* This font size seems more appropriate for a title, not individual items, adjust if needed */
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    display: flex;
+    flex-direction: column; /* Icon image on top, text below */
+    align-items: center; /* Center image and text horizontally */
+    justify-content: flex-start; /* Align content to the top of the icon box */
+    padding: 5px;
+    text-align: center;
+    font-size: 12px; /* Font size for the caption */
+    box-sizing: border-box; /* Include padding in the item's width/height */
+    color: #363636;
+    /* REVISED HEIGHT for better thumbnail appearance */
+    height: auto; /* Let content define height */
+    min-height: 100px; /* Ensure a minimum height for consistent rows */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-item img {
+    max-width: 48px; /* Original desired icon width */
+    height: 48px;   /* Original desired icon height */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    border: none;
+    background: none;
+    box-shadow: none;
+    display: block;
+    margin-bottom: 5px; /* Space between image and caption */
+}
+
+.gallery-item:hover img {
+  opacity: 0.5;
+}
+
+.gallery-item:hover{
+    background: #36363618;
+    color: #fff;
+    border-radius: 15px;
+    transform: scale(1.08);
+    cursor: pointer;
+}
+
+/*////////////////*/
+/*PopUp Image Tab */
+/*////////////////*/
+.lil-tab-photos {
+    position: absolute;
+    display: none;
+    top: 25px;
+    left: 40%;
+    width: auto;
+    max-width: 90vw;
+    height: auto;
+    max-height: 90vh;
+    background: #ece9d8;
+    border: 3px solid;
+    border-color: #ebe4dc;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4),
+                0 1px 5px rgba(0,0,0,0.6),
+                 0 1px 5px rgba(0,0,0,0.8);
+
+    z-index: 1000;
+}
+.lil-tab-photos.active {
+    display: block;
+}
+#liltitleBar {
+  cursor: grab;
+}
+#liltitleBar:active {
+  cursor: grabbing;
+}
+.enlarged-photo img {
+    max-width: 80vw;      /* Never exceed 90% of the viewport width */
+    max-height: 80vh;     /* Never exceed 60% of the viewport height */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: inline-block;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    background: #fff;
+}

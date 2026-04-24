@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The peculiar Sir Charlie Wilson of the Greater Boise Area, Idaho</title>
+    <link rel="icon" href="" type="">
+  <link rel="stylesheet" href="filmgallery.css" />
+  <script src="imagekit.min.js"></script>   
+</head>
+<body>
+    <div class="navbar">
+        <a href="frontpage.html">Home</a>
+        <a class="download-button" href="images/wilson.mcharles.resume (3_26_26).pdf" download>Resume</a>
+        <a href="film.html">Film</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div id="main-content" class="main-content">
+        <div class="window-content" id ="windowcontent">
+            <div class="photo-gallery" id="photoGallery">
+                <!-- Images will be dynamically loaded here by JavaScript -->
+            </div>
+        </div>
+        <div class="lil-tab-photos" id="lilTabPhotos">
+            <div class="title-bar" id="liltitleBar">
+                <div class="window-title"></div>
+                <div class="window-controls">
+                    <div class="control-button close-btn" id="closebtn" onclick="closeSmallTab()"></div>
+                </div>
+            </div>
+            <div id="enlarged-photo" class="enlarged-photo">
+                <img id="enlarged-photo-img" src="" alt="Enlarged Image">
+            </div>
+        </div>
+    </div>
+        <script src="film2026.js"></script>
+        <script src="frontpage.js"></script>
+        <script src="draggable-tab.js"></script>
+</body>
+</html>
